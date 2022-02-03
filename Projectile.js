@@ -1,5 +1,4 @@
 import Player from '/Player.js';
-import { canva,ctx } from "./Player.js";
 class Projectile extends Player{
     constructor(x,y,radius,color,velocity){
         super()

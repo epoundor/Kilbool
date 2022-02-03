@@ -1,5 +1,5 @@
 import { ctx } from './Player.js';
-import Projectile from '/Projectile.js';
+import Projectile from './Projectile.js';
 
 class Particles extends Projectile{
     constructor(x,y,color){

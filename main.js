@@ -1,5 +1,5 @@
 import { canva, ctx } from "./Player.js";
-import Player from '/Player.js';
+import Player from './Player.js';
 import Projectile from './Projectile.js';
 import Enemy from './Enemy.js';
 import Particles from "./Particle.js";
