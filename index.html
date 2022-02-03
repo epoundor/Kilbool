@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+    <title>Kilbool</title>
+</head>
+<body style="margin:0;height: 100vh;width: 100vw;font-family: 'Poppins', sans-serif;background-color: black;">
+    <div style="color: white;position: fixed;margin: 10px;user-select: none;" >Score : <span class="score">0</span></div>
+    <div class="modal" style="position: absolute; background-color: white; top:50%;left: 50%;transform: translate(-50%,-50%);width: 90%;padding: 10px;height: 200px;border-radius: 5px;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;" >
+        <h1 class='sc' style="font-weight: bold; margin: 0;">0</h1>
+        <p>Points</p>
+        <button style="width: 90%; background-color: blue; color: white;padding: 10px;border-radius: 100px;border: none; cursor: pointer;">Restart/Start</button>
+        <div class="btn" >
+            <input type="checkbox" name="autoplay" id="autoplay">
+            <label for="autoplay">Autoplay?</label>
+        </div>
+    </div>
+    <canvas>
+    </canvas>
+</body>
+<script src="main.js" type="module"></script>
+</html>
