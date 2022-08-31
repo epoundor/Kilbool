@@ -1,8 +1,8 @@
-import { canva, ctx } from "./Player.js";
-import Player from './Player.js';
-import Projectile from './Projectile.js';
-import Enemy from './Enemy.js';
-import Particles from "./Particle.js";
+import { canva, ctx } from "./Player";
+import Player from './Player';
+import Projectile from './Projectile';
+import Enemy from './Enemy';
+import Particles from "./Particle";
 // Desiner le joueur
 const player=new Player(canva.width/2,canva.height/2,20,'white')
 //Modal
