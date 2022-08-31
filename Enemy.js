@@ -1,5 +1,5 @@
-import Projectile from '/Projectile.js';
-import { canva } from "./Player.js";
+import Projectile from '/Projectile';
+import { canva } from "./Player";
 
 class Enemy extends Projectile{
     
