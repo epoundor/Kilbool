@@ -1,4 +1,4 @@
-import Player from '/Player.js';
+import Player from '/Player';
 class Projectile extends Player{
     constructor(x,y,radius,color,velocity){
         super()
