@@ -1,0 +1,12 @@
+{
+  "name": "kilbool",
+  "version": "1.0.0",
+  "description": "It's a cliking game, le but est de faire le maximum de points possible",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

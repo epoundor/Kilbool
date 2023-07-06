@@ -6,10 +6,10 @@ import Particles from "./Particle.js";
 // Desiner le joueur
 const player=new Player(canva.width/2,canva.height/2,20,'white')
 //Modal
-let button =document.querySelector('button'),
-    modal=document.querySelector(".modal"),
-    sc=document.querySelector(".sc"),
-    autoplay=document.getElementById("autoplay")
+let button = document.querySelector('button'),
+    modal= document.querySelector(".modal"),
+    sc= document.querySelector(".sc"),
+    autoplay= document.getElementById("autoplay")
 //Tableau d'éléments
 let projectiles=[]
 let enemies=[]
