@@ -75,7 +75,7 @@ class Enemy extends Projectile{
     
     constructor(t){
         super()
-        this.radius=Math.random() * (40-6) +6;
+        this.radius=Math.random() * 1/t * (40-6) +6;
         if (Math.random()<0.5) {
             this.x=Math.random()< 0.5?0-this.radius:canva.width+this.radius;
             this.y=Math.random()*canva.height
