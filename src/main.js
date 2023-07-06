@@ -1,8 +1,86 @@
-import { canva, ctx } from "./Player.js";
-import Player from './Player.js';
-import Projectile from './Projectile.js';
-import Enemy from './Enemy.js';
-import Particles from "./Particle.js";
+
+// Classes
+// ================== Player ================
+class Player{
+    
+    constructor(x,y,radius,color){
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+        this.color=color
+    }
+    //Dessine le player
+    draw() {
+        ctx.beginPath()//Pour commencer a dessiner
+        ctx.arc(this.x,this.y,this.radius,0,Math.PI*2,true)//Dessine le cercle
+        ctx.fillStyle=this.color//Attribut la couleur
+        ctx.fill()//Pour dessiner
+    }
+}
+
+// ================== Projectile ================
+class Projectile extends Player{
+    constructor(x,y,radius,color,velocity){
+        super()
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+        this.color=color
+        this.velocity=velocity
+    }
+
+    update(){
+        this.draw()
+        this.x+=this.velocity.x;
+        this.y+=this.velocity.y;
+    }
+}
+
+// ================== Projectile ================
+
+class Projectile extends Player{
+    constructor(x,y,radius,color,velocity){
+        super()
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+        this.color=color
+        this.velocity=velocity
+    }
+
+    update(){
+        this.draw()
+        this.x+=this.velocity.x;
+        this.y+=this.velocity.y;
+    }
+}
+
+// ================== Enemy ================
+class Enemy extends Projectile{
+    
+    constructor(t){
+        super()
+        this.radius=Math.random() * (40-6) +6;
+        if (Math.random()<0.5) {
+            this.x=Math.random()< 0.5?0-this.radius:canva.width+this.radius;
+            this.y=Math.random()*canva.height
+        }else{
+            this.x=Math.random()*canva.width
+            this.y=Math.random()< 0.5?0-this.radius:canva.height+this.radius;
+        }
+        this.color=`hsl(${Math.random()*360},50%,50%)`
+        this.velocity={
+            x:t*Math.cos(Math.atan2((canva.height/2)-this.y,(canva.width/2)-this.x)),
+            y:t*Math.sin(Math.atan2((canva.height/2)-this.y,(canva.width/2)-this.x))
+        }
+    }
+  
+}
+
+let canva= document.querySelector('canvas');
+let ctx=canva.getContext('2d');
+canva.width=innerWidth;
+canva.height=innerHeight;
 // Desiner le joueur
 const player=new Player(canva.width/2,canva.height/2,20,'white')
 //Modal
