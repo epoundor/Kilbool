@@ -124,11 +124,14 @@ setInterval(() => {
     t += 0.5
 }, 30000);
 //Dessiner les projectiles au click
+addEventListener('touchend',(e)=>{
+    let angle= Math.atan2(e.clientY-canva.height/2,e.clientX-canva.width/2)
+    shoot(angle)
+})
 addEventListener('click',(e)=>{
     let angle= Math.atan2(e.clientY-canva.height/2,e.clientX-canva.width/2)
     shoot(angle)
 })
-
 //Fait apparaitre les enemies
 //avec une position aléatoire 
 //et une taille et couleur aléatoire
