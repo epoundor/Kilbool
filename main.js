@@ -36,6 +36,40 @@ class Projectile extends Player{
     }
 }
 
+// ================== Particles ================
+class Particles extends Projectile{
+    constructor(x,y,color){
+        super()
+        this.x=x;
+        this.y=y;
+        this.radius=Math.random()*3;
+        this.color=color
+        this.velocity={
+            x:(Math.random()-0.5)*Math.random()*4 *0.99,
+            y:(Math.random()-0.5)*Math.random()*4 *0.99
+        }
+        this.alpha=1
+    }
+
+     //Dessine la particule
+     draw() {
+        ctx.save()
+        ctx.globalAlpha=this.alpha
+        ctx.beginPath()//Pour commencer a dessiner
+        ctx.arc(this.x,this.y,this.radius,0,Math.PI*2,true)//Dessine le cercle
+        ctx.fillStyle=this.color//Attribut la couleur
+        ctx.fill()//Pour dessiner
+        ctx.restore()
+    }
+
+    update(){
+        this.draw()
+        this.x+=this.velocity.x;
+        this.y+=this.velocity.y;
+        this.alpha -=0.01
+    }
+}
+
 // ================== Enemy ================
 class Enemy extends Projectile{
     
@@ -88,7 +122,6 @@ function init() {
 }
 setInterval(() => {
     t += 0.5
-    console.log(t);
 }, 30000);
 //Dessiner les projectiles au click
 addEventListener('click',(e)=>{
@@ -102,8 +135,6 @@ addEventListener('click',(e)=>{
 function spawnEnemy() {
     setInterval(()=>{
         const enemy = new Enemy(t-4);
-        // console.log(enemy.velocity);
-        // setTimeout(()=>{console.log(enemies[0].velocity.y);})
         enemies.push(enemy)
     },900)
 }
@@ -152,6 +183,7 @@ function animate() {
                     addScore(100)
                 }
                projectiles.splice(i,1)
+               
                enemies.splice(j,1)
             }
         })
@@ -164,7 +196,7 @@ function animate() {
         }
         particule.update()
     })
-    // console.log(enemies);
+
 }
 function getDist(x,y) {
     return Math.hypot(x,y)
